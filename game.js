@@ -9,4 +9,8 @@ const nextSequence = () => {
     let randomChosenColor = buttonColors[randomNumber];
     // add the new randomChosenColor to the gamePattern
     gamePattern.push(randomChosenColor);
+    // animate a flash to the button
+    $('div.' + randomChosenColor).animate({opacity: 0}, 100).animate({opacity: 1}, 100);
+    // play the sound for the button color selected
+    new Audio('./sounds/' + randomChosenColor + '.mp3').play();
 }
